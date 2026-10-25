@@ -45,3 +45,6 @@ MM0/mm0D
 __pycache__/
 *.pyc
 scripts/table/generated/
+
+# legacy strategy build outputs
+legacy/build/

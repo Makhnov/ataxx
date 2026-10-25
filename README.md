@@ -125,3 +125,28 @@ Les résultats des matchs sont endregistrés dans `/logs/tournament/runs/[MATCH_
 Les résultats détaillés de nos benchmarks sont disponibles sur notre site :
 
 https://makh.fr/blobwar/
+
+
+## Données et framework legacy embarqués
+
+Le dépôt est autonome pour les données de cartes utilisées par le serveur :
+
+- `data/boards/` contient les cartes historiques récupérées depuis `Makhnov/blobmap@70e86dcf209d406c6344cca0b89ce4a00ef0cbf8`.
+- `standard` et `x` sont notamment les deux cartes utilisées par les benchmarks principaux.
+
+Le framework d'interface des premières stratégies est conservé sous `legacy/`.
+Il provient du même commit `blobmap` et fournit l'API historique
+`Strategy / movement / bidiarray` attendue par :
+
+- `strategies/strategy_glouton.cc`
+- `strategies/strategy_minimax.cc`
+- `strategies/strategy_AB_ID.cc`
+
+`strategy_minimax.cc` nécessite deux déclarations absentes du `strategy.h`
+historique. Elles sont ajoutées uniquement dans `legacy/strategy.h`, et la
+logique `isEndGame()` correspond à celle déjà présente dans
+`strategies/strategy_minimax_par.cc`. Les fichiers des stratégies eux-mêmes
+ne sont pas modifiés.
+
+Les exécutables produits sous `legacy/build/` sont des runners de calcul
+legacy, pas des clients réseau MM0.
