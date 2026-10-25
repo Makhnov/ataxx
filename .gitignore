@@ -1,0 +1,47 @@
+# obj
+**/*.o
+**/*.d
+
+# exe
+blobwar
+launchStrategy
+launchStrategy2
+
+# temp
+*~
+core
+
+# divers
+docs/
+.vscode/
+
+# stats
+logs/*
+!logs/data.js
+
+#exécutables
+MM0/mm0_client
+MM0/mm0_gui
+server/blobwar_server
+MM0/mm0
+MM0/MM_v1
+MM0/AB_v1
+MM0/MMP_v1
+MM0/ABP_v1
+MM0/NMP_TT_v1
+MM0/NMP_TT_v2
+MM0/NMP_TT_SF_v1
+MM0/NMP_TT_SF_v2
+MM0/NMP_TT_SF_v3
+MM0/NMP_TT_SF_v4
+MM0/NMP_TT_SF_v5
+MM0/NMP_TT_SF_v7
+MM0/NMP_TT_SF_v*F
+MM0/NMP_TT_SF_v*D
+MM0/mm0F
+MM0/mm0D
+
+# python/cache/generated table outputs
+__pycache__/
+*.pyc
+scripts/table/generated/
